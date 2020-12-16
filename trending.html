@@ -1,0 +1,245 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Trending</title>
+</head>
+<style>
+    /* ==== Cards using Bootstrap === */
+
+#cards .card {
+    border-radius: 20px;
+    min-height: 100%;
+}
+
+#cards .heading-border {
+    position: absolute;
+    width: 100%;
+    top: 60%;
+}
+
+#cards .card .user-picture img {
+    position: absolute;
+    top: -20%;
+    right: 10%;
+    background: #f8f9fa!important;
+    padding: 10px;
+}
+
+#cards .card .user-content .user-name {
+    margin-right: 150px;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  min-height: 8vh; /* change to 8vh */
+
+  background-color: #141414;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+  
+}
+
+.navbar .logo {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: monospace;
+  letter-spacing: 5px;
+}
+
+.navbar ul.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 35%;
+  list-style-type: none;
+  margin-top: 5px;
+}
+
+.navbar ul.nav-links li a {
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+.navbar .menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-grow: 1;
+  margin-left: 25px;
+}
+
+.navbar .menu-icon span {
+  display: block;
+  border-radius: 15px;
+  width: 25px;
+  height: 10px;
+  background-color: #fff;
+  margin: 5px;
+  transition: all 0.4s ease;
+}
+
+@media screen and (max-width: 710px) {
+  body {
+    overflow: hidden;
+  }
+
+  .navbar .menu-icon {
+    display: block;
+    z-index: 99999;
+  }
+
+  .navbar .logo {
+    flex-grow: 1;
+  }
+
+  .navbar ul.nav-links {
+    position: absolute;
+    top: 18vh; 
+    height: 92vh; 
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 1);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
+    width: 50%;
+    z-index: 1;
+  }
+
+  .navbar ul.nav-links li {
+    opacity: 0;
+  }
+
+  #content h1.content-header {
+    font-size: 25px;
+  }
+
+  #content p.content-para {
+    font-size: 13px;
+  }
+}
+
+.navbar ul.nav-links.menu-active {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+@keyframes navLinkAnime {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.navbar .menu-icon.span-anime span:first-child {
+  transform: rotate(-135deg) translate(-20px, 6px);
+  margin-left: -18px;
+}
+
+.navbar .menu-icon.span-anime span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar .menu-icon.span-anime span:last-child {
+  transform: rotate(135deg) translate(-19px, -5px);
+  margin-left: -17px;
+}
+
+</style>
+
+<body class="bg-light">
+
+
+    <main>
+        <nav class="navbar">
+            <div class="menu-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+        
+            <div class="logo">
+              <h3>Ideas_Hub</h3>
+            </div>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button type="button" class="btn btn-outline-light">Search</button>
+            </form>
+            <div>
+              <form action="C:\Users\DELL\Desktop\Ideas Hub\blank idea.html" method="POST">
+              <button type="submit" class="btn btn-outline-light" href="C:\Users\DELL\Desktop\Ideas Hub\blank idea.html">Add Idea</button>
+              
+              </form>
+            </div>
+        
+            <ul class="nav-links">
+              
+              <li><a href="C:\Users\DELL\Desktop\Ideas Hub\tech.html">Tech</a></li>
+              <li><a href="C:\Users\DELL\Desktop\Ideas Hub\art.html">Art</a></li>
+              <li><a href="C:\Users\DELL\Desktop\Ideas Hub\business.html">Business</a></li>
+              <li><a href="C:\Users\DELL\Desktop\Ideas Hub.other.html">Other</a></li>
+              <li><a href="C:\Users\DELL\Desktop\Ideas Hub">Contact</a></li>
+            </ul>
+          </nav>
+          
+        <!-- Ui cards -->
+        <section id="cards">
+            <div class="container py-2">
+                <div class="row pb-4">
+                    <div class="col-12 text-center">
+                        <div class="display-3">Trending </div>
+                    </div>
+                </div>
+               
+            </div>
+            <!-- /cards -->
+        </section>
+        <!-- /Ui cards -->
+    </main>
+
+    <script>const menuSlide = () => {
+        const menuIcon = document.querySelector(".menu-icon");
+        const navLinks = document.querySelector(".nav-links");
+        const navLinksInner = document.querySelectorAll(".nav-links li");
+      
+        //menu-icon click event
+        menuIcon.addEventListener("click", () => {
+          //toggle active class
+          navLinks.classList.toggle("menu-active");
+      
+          //animate navLinks
+          navLinksInner.forEach((li, index) => {
+            if (li.style.animation) {
+              li.style.animation = "";
+            } else {
+              li.style.animation = `navLinkAnime 0.5s ease forwards ${
+                index / 7 + 0.3
+              }s`;
+            }
+          });
+      
+          //toggle for menu-icon animation
+          menuIcon.classList.toggle("span-anime");
+        });
+      };
+      
+      menuSlide();
+      </script>
+</body>
+
+</html>
